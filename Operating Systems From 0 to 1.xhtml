@@ -6509,12 +6509,12 @@ Feature flag</span></span></b></div>
 
 <div class="full_width" id='magicparlabel-37538'><div class="full_width_item"><div class='float-listings'><pre class ='listings'>#include &lt;stdint.h&gt;
 
-uint8_t @|\color{red}\bfseries byte|@ = 0x12;
-uint16_t @|\color{blue}\bfseries word|@ = 0x1234;
-uint32_t @|\color{green}\bfseries dword|@ = 0x12345678;
-uint64_t @|\color{magenta}\bfseries qword|@ = 0x123456789abcdef;
-unsigned __int128 @|\color{cyan}\bfseries dqword1|@ =  (__int128) 0x123456789abcdef;
-unsigned __int128 @|\color{cyan}\bfseries dqword2|@ =  (__int128) 0x123456789abcdef &lt;&lt; 64;
+uint8_t byte = 0x12;
+uint16_t word = 0x1234;
+uint32_t dword = 0x12345678;
+uint64_t qword = 0x123456789abcdef;
+unsigned __int128 dqword1 =  (__int128) 0x123456789abcdef;
+unsigned __int128 dqword2 =  (__int128) 0x123456789abcdef &lt;&lt; 64;
 
 int main(int argc, char *argv[]) {
         return 0;
@@ -6625,8 +6625,8 @@ padding bytes</em>. To make it easier to see, we look at <span style='font-famil
 <div class="full_width" id='magicparlabel-37639'><div class="full_width_item"><div class='float-listings'><pre class ='listings C'>#include &lt;stdint.h&gt;
 
 int8_t i = 0;
-int8_t @|\color{red}\bfseries *p1|@ =  (int8_t *) 0x1234;
-int8_t @|\color{blue}\bfseries *p2|@ =  &amp;i;
+int8_t *p1 =  (int8_t *) 0x1234;
+int8_t *p2 =  &amp;i;
 
 int main(int argc, char *argv[]) {
         return 0;
@@ -6700,28 +6700,28 @@ struct normal_struct {
     int data4;
 };
 
-struct normal_struct @|\color{red}\bfseries ns|@ = {
-    .data1 = @|\color{red}\bfseries 0x12345678|@,
-    .data2 = @|\color{red}\bfseries 0x9abcdef0|@,
-    .data3 = @|\color{red}\bfseries 0x12345678|@,
-    .data4 = @|\color{red}\bfseries 0x9abcdef0|@,
+struct normal_struct ns = {
+    .data1 = 0x12345678,
+    .data2 = 0x9abcdef0,
+    .data3 = 0x12345678,
+    .data4 = 0x9abcdef0,
 };
 
-int @|\color{blue}\bfseries i|@ = 0x12345678;
+int i = 0x12345678;
 
-struct bit_field @|\color{magenta}\bfseries bf|@ = {
-    .data1 = @|\color{magenta}\bfseries 0x12|@,
-    .data2 = @|\color{magenta}\bfseries 0x34|@,
-    .data3 = @|\color{magenta}\bfseries 0x56|@,
-    .data4 = @|\color{magenta}\bfseries 0x78|@
+struct bit_field bf = {
+    .data1 = 0x12,
+    .data2 = 0x34,
+    .data3 = 0x56,
+    .data4 = 0x78
 };
 
-struct bit_field2 @|\color{green}\bfseries bf2|@ = {
-    .data1 = @|\color{green}\bfseries 0x12|@,
-    .data2 = @|\color{green}\bfseries 0x34|@,
-    .data3 = @|\color{green}\bfseries 0x56|@,
-    .data4 = @|\color{green}\bfseries 0x78|@,
-    .data5 = @|\color{green}\bfseries 0xf|@
+struct bit_field2 bf2 = {
+    .data1 = 0x12,
+    .data2 = 0x34,
+    .data3 = 0x56,
+    .data4 = 0x78,
+    .data5 = 0xf
 };
 
 int main(int argc, char *argv[]) {
@@ -6808,10 +6808,10 @@ What happens when the definition of <span style='font-family:monospace;'>bit_fie
 
 <div class='float-listings'><pre class ='listings'>#include &lt;stdint.h&gt;
 
-uint8_t @|\color{red}\bfseries a8[2]|@ = {0x12, 0x34};
-uint16_t @|\color{blue}\bfseries a16[2]|@ = {0x1234, 0x5678};
-uint32_t @|\color{magenta}\bfseries a32[2]|@ = {0x12345678, 0x9abcdef0};
-uint64_t @|\color{green}\bfseries a64[2]|@ = {0x123456789abcdef0, 0x123456789abcdef0};
+uint8_t a8[2] = {0x12, 0x34};
+uint16_t a16[2] = {0x1234, 0x5678};
+uint32_t a32[2] = {0x12345678, 0x9abcdef0};
+uint64_t a64[2] = {0x123456789abcdef0, 0x123456789abcdef0};
 
 int main(int argc, char *argv[])
 {
@@ -6901,12 +6901,12 @@ int main(int argc, char *argv[])
 
 <div class='float-listings'><pre class ='listings'>#include &lt;stdint.h&gt;
 
-uint8_t @|\color{red}\bfseries a2[2][2]|@ = {
+uint8_t a2[2][2] = {
     {0x12, 0x34},
     {0x56, 0x78}
 };
 
-uint8_t @|\color{blue}\bfseries a3[2][2][2]|@ = {
+uint8_t a3[2][2][2] = {
     {{0x12, 0x34},
      {0x56, 0x78}},
     {{0x9a, 0xbc},
@@ -7847,8 +7847,8 @@ Unnamed scope:
 </dt>
 <dd class="description_item">
 
-<div class='float-listings'><pre class ='listings C'>int add(int @|\color{red}\bfseries a|@, int @|\color{green}\bfseries b|@) {
-    int @|\color{blue}\bfseries i|@ = @|\color{red}\bfseries a|@ + @|\color{green}\bfseries b|@;
+<div class='float-listings'><pre class ='listings C'>int add(int a, int b) {
+    int i = a + b;
 
     return i;
 }</pre></div>
@@ -11700,7 +11700,7 @@ A breakpoint can be set on a line as displayed by an editor. Suppose we want to 
 
 <div class='float-listings'><pre class ='listings C'>#include &lt;stdio.h&gt;
 
-@|\color{red}\bfseries int main(int argc, char *argv[])|@
+int main(int argc, char *argv[])
 {
     printf("Hello World!\n");
     return 0;
@@ -13688,7 +13688,7 @@ bootdisk:  $(BOOTLOADER_OBJS)
 </div>
 
 
-<div class='float-listings'><pre class ='listings [gnu]make'>BUILD_DIR=@|\color{blue}\bfseries ../build/|@bootloader
+<div class='float-listings'><pre class ='listings [gnu]make'>BUILD_DIR=../build/bootloader
 
 BOOTLOADER_SRCS := $(wildcard *.asm)
 BOOTLOADER_OBJS := $(patsubst %.asm, $(BUILD_DIR)/%.o, $(BOOTLOADER_SRCS))
@@ -15498,7 +15498,7 @@ freestanding environment</em> is an environment that does not provide system-dep
 <div class='float-listings'><pre class ='listings [gnu]make'>BUILD_DIR=../build
 OS=$(BUILD_DIR)/os
 
-@|\color{red}\bfseries CFLAGS+=-ffreestanding -nostdlib -gdwarf-4 -m32 -ggdb3|@
+CFLAGS+=-ffreestanding -nostdlib -gdwarf-4 -m32 -ggdb3
 
 OS_SRCS := $(wildcard *.c)
 OS_OBJS := $(patsubst %.c, $(BUILD_DIR)/%.o, $(OS_SRCS))
@@ -15509,7 +15509,7 @@ $(BUILD_DIR)/%.o: %.c
 	gcc $(CFLAGS) -c  $&lt; -o $@
 
 $(OS): $(OS_OBJS)
-	ld -m elf_i386 -T@|\color{blue}\bfseries os.lds|@ $(OS_OBJS) -o $@
+	ld -m elf_i386 -Tos.lds $(OS_OBJS) -o $@
 
 clean:
 	rm $(OS_OBJS)</pre></div>
@@ -15676,7 +15676,7 @@ boot:
 
   mov	ah, 0x02			           ; read floppy sector function
   int	0x13					       ; call BIOS - Read the sector
-  jmp	@|\color{blue}\bfseries [500h + 18h]|@				  ; jump and execute the sector!
+  jmp	[500h + 18h]				  ; jump and execute the sector!
 
   hlt	; halt the system
 
@@ -15694,7 +15694,7 @@ boot:
 <div class="standard" id='magicparlabel-48346'>The first part is done. For the next part, we need to build an ELF operating system image for the bootloader to load. The first step is to create a linker script:</div>
 
 
-<div class='float-listings'><pre class ='listings bash'>@|\color{blue}\bfseries ENTRY(main);|@
+<div class='float-listings'><pre class ='listings bash'>ENTRY(main);
 
 PHDRS
 {
@@ -15704,7 +15704,7 @@ PHDRS
 
 SECTIONS
 {
-  .text @|\color{blue}\bfseries 0x500|@: { *(.text)  } :code
+  .text 0x500: { *(.text)  } :code
   .data :  { *(.data)  }
   .bss :  { *(.bss) }
   /DISCARD/ : { *(.eh_frame) }
@@ -16092,7 +16092,7 @@ SECTIONS
  </mrow></math>; <span style='font-family:monospace;'>0x500</span> is the memory location where the bootloader loads into the physical memory and <span style='font-family:monospace;'>0x100</span> is the offset from the end of ELF header to <span style='font-family:monospace;'>.text</span>. The entry address and the debug info will then take the value <span style='font-family:monospace;'>0x600 </span>from the <span style='font-family:monospace;'>VirtAddr</span> field above, which totally matches the actual physical layout. We can do it by changing <span style='font-family:monospace;'>os.lds</span> as follow:</div>
 
 
-<div class='float-listings'><pre class ='listings bash'>@|\color{blue}\bfseries ENTRY(main);|@
+<div class='float-listings'><pre class ='listings bash'>ENTRY(main);
 
 PHDRS
 {
@@ -16102,7 +16102,7 @@ PHDRS
 
 SECTIONS
 {
-  .text @|\color{blue}\bfseries 0x600|@: @|\color{magenta} ALIGN(0x100)|@ { *(.text)  } :code
+  .text 0x600: ALIGN(0x100) { *(.text)  } :code
   .data :  { *(.data)  }
   .bss :  { *(.bss) }
   /DISCARD/ : { *(.eh_frame) }
@@ -16129,7 +16129,7 @@ SECTIONS
 
 <div class='float-listings'><pre class ='listings [gnu]make'>..... above content omitted ....
 $(OS): $(OS_OBJS)
-	ld -m elf_i386 @|\color{red}\bfseries -nmagic|@ -Tos.lds $(OS_OBJS) -o $@</pre></div>
+	ld -m elf_i386 -nmagic -Tos.lds $(OS_OBJS) -o $@</pre></div>
 
 
 <div class="standard" id='magicparlabel-48830'>Finally, we also need to update the top-level Makefile to write more than one sector into the disk image for the operating system binary, as its size exceeds one sector:</div>
